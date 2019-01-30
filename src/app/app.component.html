@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>{{ title }}!</h1>
+<br /><br />
+
+<button (click)="timer.startTimer()">Start</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="timer.stopTimer()">Stop</button><br />
+
+<app-game-control #timer (countEvent)="$event % 2 == 0? even.onCountEvent($event): odd.onCountEvent($event)"></app-game-control>
+<br />
+
+<div class="row">
+    <div class="col-md-6"><b>Even Counts</b></div>
+    <div class="col-md-6"><b>Odd Counts</b></div>
+</div>
+<div class="row">
+    <div class="col-md-6"><app-game-control-even #even></app-game-control-even></div>
+    <div class="col-md-6"><app-game-control-odd #odd></app-game-control-odd></div>
+</div>
